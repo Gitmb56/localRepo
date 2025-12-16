@@ -7,3 +7,5 @@ class Dog:
 
 tommy = Dog()
 tommy.bark()
+tommy.aa()
+print(tommy)
