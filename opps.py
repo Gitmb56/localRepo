@@ -12,3 +12,13 @@ Dog = type(
 d = Dog()
 print(d.legs)
 d.bark()
+
+class Cat:
+    species = "Animal"
+
+    def bark(self):
+        print("Meow Meow")
+#print(Cat.__dict__)
+dd = Cat()
+print(dd.__dict__)
+
