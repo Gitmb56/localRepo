@@ -6,6 +6,8 @@ class Dog:
         print("haow haow!")
 
 tommy = Dog()
+print(type(Dog))
+print(type(type))
 tommy.bark()
 tommy.aa()
 print(tommy)
