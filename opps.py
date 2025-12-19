@@ -5,9 +5,6 @@ class Dog:
     def aa(self):
         print("haow haow!")
 
-tommy = Dog()
-print(type(Dog))
-print(type(type))
-tommy.bark()
-tommy.aa()
-print(tommy)
+d1 = Dog()
+d1.bark()
+d1.aa()
