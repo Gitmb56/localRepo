@@ -1,10 +1,14 @@
-class Dog:
-    def bark(self):
-        print("Bow Bow!")
-    
-    def aa(self):
-        print("haow haow!")
+def bark(self):
+    print("Bhow Bhow")
+Dog = type(
+    "Dog",                   # class name
+    (),                      #parent classes
+    {
+        "legs":4,
+        "bark":bark
+    }
+)
 
-d1 = Dog()
-d1.bark()
-d1.aa()
+d = Dog()
+print(d.legs)
+d.bark()
