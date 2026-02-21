@@ -1,25 +1,23 @@
 class BankAccount:
-    def __init__(self):
-        self.name = "Mangal Baski"
-        self.  __balance = 0                # Mangled this private
+    def __init__(self, owner='Mangal', initial_balance=0):
+        self.owner = owner
+        self._balance = initial_balance          # protected by convention
+        # self.__balance = initial_balance       # name mangled (strong hint)
 
-    def Deposit(self,amount):
+    def deposit(self, amount):
         if amount > 0:
-            self.__balance += amount
-            print(f"Deposit amount {self.__balance}")
+            self._balance += amount
+            print(f"Deposited {amount}. New balance: {self._balance}")
+        else:
+            raise ValueError("Amount must be positive")
 
-    def withdraw(self,amount):
-        if amount > 0 and self.__balance >= amount:
-            self.__balance -= amount
-            print(f"Withdraw amount {self.__balance}")
+    def withdraw(self, amount):
+        if 0 < amount <= self._balance:
+            self._balance -= amount
+            print(f"Withdrew {amount}. New balance: {self._balance}")
+        else:
+            raise ValueError("Invalid withdrawal amount")
 
-    def show(self):
-        print(f"Account Holder {self.name} \n Balance : {self.__balance}") 
-
-# Object Creation
-
-a1 = BankAccount()
-user_in = int(input("Enter Deposit amount: "))
-a1.Deposit(user_in)
-a1.show()
-#print(a1.__dict__)
+    @property
+    def balance(self):          # read-only view
+        return self._balance
