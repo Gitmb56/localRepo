@@ -21,3 +21,8 @@ class BankAccount:
     @property
     def balance(self):          # read-only view
         return self._balance
+
+# Obkect Creation 
+acc = BankAccount()
+acc.deposit(5000)
+print(acc.balance)
